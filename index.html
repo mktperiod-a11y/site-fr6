@@ -24,12 +24,12 @@
 const services=[
 {name:"온디스크",score:"4.9",badge:"EDITOR'S PICK",benefit:"신규 회원 혜택 운영",summary:"영화·드라마·예능부터 애니·웹툰까지 폭넓게 둘러보기 좋은 종합 콘텐츠 서비스",tags:"#종합 콘텐츠　#PC·모바일",color:"#6557ff",url:"https://ondisk.co.kr/"},
 {name:"케이디스크",score:"4.8",badge:"추천",benefit:"가입 이벤트 확인",summary:"깔끔한 카테고리 구성과 직관적인 화면으로 처음 이용할 때도 접근하기 편한 서비스",tags:"#쉬운 사용성　#다양한 장르",color:"#12a594",url:"https://kdisk.co.kr/"},
-{name:"싸다파일",score:"4.7",badge:"신규 인기",benefit:"포인트·쿠폰 이벤트",summary:"여러 웹하드 비교 사이트에서 신규 서비스 상위권으로 자주 소개되는 곳",tags:"#신규 서비스　#이벤트",color:"#ff7b54",url:"#guide"},
-{name:"꿀파일",score:"4.6",badge:"혜택 주목",benefit:"신규 가입 혜택",summary:"가입 혜택과 간결한 이용 화면을 중심으로 여러 비교 사이트에서 소개되는 서비스",tags:"#가입 혜택　#간결한 UI",color:"#f2ad24",url:"#guide"},
-{name:"파일썬",score:"4.4",badge:"스테디",benefit:"이벤트 수시 운영",summary:"오랜 운영 이력과 다양한 프로모션을 기준으로 비교 목록에 꾸준히 포함되는 서비스",tags:"#운영 안정성　#프로모션",color:"#3b82f6",url:"#guide"},
-{name:"파일스타",score:"4.3",badge:"주목",benefit:"가입 혜택 확인",summary:"최신 콘텐츠와 이벤트를 중심으로 최근 웹하드 순위 페이지에서 자주 언급되는 서비스",tags:"#최신 콘텐츠　#이벤트",color:"#ef476f",url:"#guide"},
-{name:"투디스크",score:"4.1",badge:"전통형",benefit:"쿠폰 혜택 확인",summary:"PC와 모바일을 함께 이용하려는 사용자에게 익숙한 전통형 웹하드 서비스",tags:"#PC·모바일　#자료 검색",color:"#8b5cf6",url:"#guide"},
-{name:"파일캐스트",score:"4.0",badge:"콘텐츠형",benefit:"이벤트 페이지 확인",summary:"방송·영상 콘텐츠 탐색을 선호하는 이용자에게 알려진 기존 웹하드 서비스",tags:"#영상 콘텐츠　#카테고리",color:"#0ea5e9",url:"#guide"}];
+{name:"싸다파일",score:"4.7",badge:"신규 인기",benefit:"포인트·쿠폰 이벤트",summary:"여러 웹하드 비교 사이트에서 신규 서비스 상위권으로 자주 소개되는 곳",tags:"#신규 서비스　#이벤트",color:"#ff7b54",url:"https://ssadafile.com/"},
+{name:"꿀파일",score:"4.6",badge:"혜택 주목",benefit:"신규 가입 혜택",summary:"가입 혜택과 간결한 이용 화면을 중심으로 여러 비교 사이트에서 소개되는 서비스",tags:"#가입 혜택　#간결한 UI",color:"#f2ad24",url:"https://ggulfile.com/"},
+{name:"파일썬",score:"4.4",badge:"스테디",benefit:"이벤트 수시 운영",summary:"오랜 운영 이력과 다양한 프로모션을 기준으로 비교 목록에 꾸준히 포함되는 서비스",tags:"#운영 안정성　#프로모션",color:"#3b82f6",url:"https://www.filesun.com/"},
+{name:"파일스타",score:"4.3",badge:"주목",benefit:"가입 혜택 확인",summary:"최신 콘텐츠와 이벤트를 중심으로 최근 웹하드 순위 페이지에서 자주 언급되는 서비스",tags:"#최신 콘텐츠　#이벤트",color:"#ef476f",url:"https://filestar.co.kr/"},
+{name:"투디스크",score:"4.1",badge:"전통형",benefit:"쿠폰 혜택 확인",summary:"PC와 모바일을 함께 이용하려는 사용자에게 익숙한 전통형 웹하드 서비스",tags:"#PC·모바일　#자료 검색",color:"#8b5cf6",url:"https://www.todisk.com/"},
+{name:"파일캐스트",score:"4.0",badge:"콘텐츠형",benefit:"이벤트 페이지 확인",summary:"방송·영상 콘텐츠 탐색을 선호하는 이용자에게 알려진 기존 웹하드 서비스",tags:"#영상 콘텐츠　#카테고리",color:"#0ea5e9",url:"https://filecast.co.kr/"}];
 document.querySelector("#top3").innerHTML=services.slice(0,3).map((s,i)=>`<div class="mini" style="--c:${s.color}"><b>${i+1}</b><i>${s.name[0]}</i><div>${s.name}<small>${s.tags.split("　")[0].replace("#","")}</small></div><em>★ ${s.score}</em></div>`).join("");
 document.querySelector("#cards").innerHTML=services.map((s,i)=>`<article class="card ${i<2?"top":""}" style="--c:${s.color}"><div class="rank">${i+1}</div><div class="brand">${s.name[0]}</div><div class="info"><h3>${s.name}</h3><span class="badge">${s.badge}</span><p>${s.summary}</p><span class="tags">${s.tags}</span></div><div class="benefit"><small>주요 혜택</small><b>${s.benefit}</b><span>★ ${s.score} / 5.0</span></div><a class="go" href="${s.url}" ${s.url.startsWith("http")?'target="_blank" rel="noreferrer"':""}>사이트 확인 ↗</a></article>`).join("");
 </script>
